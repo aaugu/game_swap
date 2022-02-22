@@ -1,0 +1,50 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Video Games</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <% if @query %>
+        <p>You searched for <strong><%= @query %></strong>. We found <%= @games.count %> games out of our <%= Game.count %> on our website.</p>
+      <% else %>
+        <p>All <%= Game.count %> games.</p>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <% @games.each do |game| %>
+      <div class="col-4">
+        <div class="game-card">
+          <div class="game-card-image" style="background-image: url('<%= game.picture_url %>')"></div>
+          <div class="game-card-content">
+            <div class="game-card-title">
+              <h4><%= game.name %></h4>
+            </div>
+            <p><%= game.address %></p>
+            <div class="flex">
+              <div class="flex">
+                <i class="material-icons mr-2">platform</i><span><%= game.platform %></span>
+              </div>
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">euro_symbol</i> <%= flat.price_per_day %>
+              </div>
+            </div>
+          </div>
+          <div class="game-card-actions">
+            <%= link_to 'More info', game_path(game) %>
+            <%= link_to 'Edit', edit_game_path(game), class: 'ml-3 text-warning' %>
+            <%= link_to "Remove", game_path(game),
+                method: :delete,
+                data: { confirm: "Are you sure?" },
+                class: 'ml-3 text-danger'
+            %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
