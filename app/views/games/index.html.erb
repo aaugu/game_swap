@@ -13,7 +13,7 @@
     <% @games.each do |game| %>
       <div class="col-4">
         <div class="game-card">
-          <div class="game-card-image" style="background-image: url('<%= game.picture_url %>')"></div>
+          <div class="game-card-image" style="background-image: url('<%= cl_image_path @game.image.key %>')"></div>
           <div class="game-card-content">
             <div class="game-card-title">
               <h4><%= game.title %></h4>
