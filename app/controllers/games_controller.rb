@@ -1,4 +1,8 @@
 class GamesController < ApplicationController
+  def index
+    @games = Game.all
+  end
+
   def new
     @categories = ["Action", "Action-Adventure", "Adventure", "Puzzle", "Role-playing", "Simulation", "Strategy", "Sport", "Sandbox"]
     @console_collection = ["Atari", "Super Nintendo", "DreamCast", "Sega", "Game Boy", "Nintendo DS", "Switch", "PC", "XBox", "Xbox 360", "PSVita", "PSOne", "PS2", "PS3", "PS4", "PS5"]

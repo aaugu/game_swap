@@ -1,0 +1,38 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12">
+      <h1>All our Video Games</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <p>All <%= Game.count %> games.</p>
+  </div>
+
+  <div class="row">
+    <% @games.each do |game| %>
+      <div class="col-4">
+        <div class="game-card">
+          <div class="game-card-image" style="background-image: url('<%= cl_image_path @game.image.key %>')"></div>
+          <div class="game-card-content">
+            <div class="game-card-title">
+              <h4><%= game.title %></h4>
+            </div>
+            <p><%= game.release_year %></p>
+            <div class="flex">
+              <div class="flex">
+                <i class="material-icons mr-2">platform</i><span><%= game.platform %></span>
+              </div>
+              <div class="flex ml-3">
+                <i class="material-icons mr-2">euro_symbol</i> <%= game.price_per_day %>
+              </div>
+            </div>
+          </div>
+          <div class="game-card-actions">
+            <%= link_to 'More info', "#" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
