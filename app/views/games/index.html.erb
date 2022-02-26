@@ -13,17 +13,18 @@
     <% @games.each do |game| %>
       <div class="col-4">
         <div class="game-card">
-          <div class="game-card-image" style="background-image: url('<%= cl_image_path @game.image.key %>')"></div>
+          <div class="game-card-image" style="background-image: url('<%= cl_image_path game.image.key, crop: :fill %>')"></div>
           <div class="game-card-content">
             <div class="game-card-title">
               <h4><%= game.title %></h4>
             </div>
             <p><%= game.release_year %></p>
+            <p><%= game.user.address %></p>
             <div class="flex">
-              <div class="flex">
-                <i class="material-icons mr-2">platform</i><span><%= game.platform %></span>
+              <div class="flex-align">
+                <i class="mr-2">platform:</i><span><%= game.platform %></span>
               </div>
-              <div class="flex ml-3">
+              <div class="flex-align ml-3">
                 <i class="material-icons mr-2">euro_symbol</i> <%= game.price_per_day %>
               </div>
             </div>
