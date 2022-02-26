@@ -3,7 +3,7 @@
     <div class="wrapper">
       <div class="product">
         <div class="blur">
-          <img class="background" src="https://s3.gaming-cdn.com/images/products/2198/271x377/jeu-steam-hollow-knight-cover.jpg" alt="Hollow Knight background" title="Hollow Knight background">
+          <%= cl_image_path @game.image.key, crop: :fill %>
         </div>
         <div class="games_infos">
           <div class="name">
@@ -25,7 +25,11 @@
               <%= @game.price_per_day %> CHF per day
             </div>
             <div class="disponibility">
-              <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png">Disponible
+              <% if @game.available %>
+                <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png">
+              <% else %>
+                <img class="vu" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png">
+              <% end %>
             </div>
             <div class="btn">
               <a href="">Rent</a>
