@@ -21,7 +21,7 @@ User.create!(
   email: "janusfury@mac.com",
   password: "123456",
   username: "James",
-  address: "Eaux-Vives, Geneva"
+  address: "Old Town, Lausanne"
 )
 
 file1 = URI.open('https://media.ldlc.com/r1600/ld/products/00/01/74/96/LD0001749675_2.jpg')
@@ -33,7 +33,7 @@ game1 = Game.new(
   platform: 'PS4',
   price_per_day: 2,
   available: true,
-  user: User.first
+  user: User.all.sample
 )
 game1.image.attach(io: file1, filename: 'COD.jpg', content_type: 'image/jpg')
 game1.save!
@@ -91,5 +91,19 @@ game5 = Game.new(
   available: true,
   user: User.all.sample
 )
-game5.image.attach(io: file5, filename: 'SKYRIM.jpg', content_type: 'image/jpeg')
+game5.image.attach(io: file5, filename: 'SKYRIM.jpeg', content_type: 'image/jpeg')
 game5.save!
+
+file6 = URI.open('https://9to5fortnite.com/wp-content/uploads/2022/01/La-actualizacion-de-GTA-5-para-la-proxima-generacion-sufrira-mas-retrasos-tras-un-desarrollo-complicado.jpg')
+game6 = Game.new(
+  title: 'Grand Theft Auto V',
+  category: 'Action-Adventure',
+  description: 'Grand Theft Auto V is a 2013 action-adventure game developed by Rockstar North and published by Rockstar Games. The game is played from either a third-person or first-person perspective, and its world is navigated on foot and by vehicle.',
+  release_year: 2013,
+  platform: 'Play Station 5',
+  price_per_day: 3,
+  available: true,
+  user: User.all.sample
+)
+game6.image.attach(io: file6, filename: 'GTA.jpg', content_type: 'image/jpg')
+game6.save!
