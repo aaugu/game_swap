@@ -4,11 +4,9 @@
       <h1>All our Video Games</h1>
     </div>
   </div>
-
   <div class="row">
     <p>All <%= Game.count %> games.</p>
   </div>
-
   <div class="row">
     <% @games.each do |game| %>
       <div class="col-4">
@@ -29,17 +27,15 @@
               </div>
             </div>
           </div>
-          
           <div class="game-card-actions d-flex justify-content-between">
-            <div class="game-card-actions">
-              <%= link_to 'More info', game_path(game) %>
-              <div class="flex-align">
-                <% if game.available %>
-                  <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png"> Available
-                <% else %>
-                  <img class="vu" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png"> Unavailable
-                <% end %>
-              </div>
+            <%= link_to 'More info', game_path(game) %>
+            <div class="flex-align">
+              <% if game.available %>
+                <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png"> Available
+              <% else %>
+                <img class="vu" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png"> Unavailable
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

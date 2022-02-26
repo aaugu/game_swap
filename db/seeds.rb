@@ -108,7 +108,7 @@ game6 = Game.new(
 game6.image.attach(io: file6, filename: 'GTA.jpg', content_type: 'image/jpg')
 game6.save!
 
-file7 = URI.open('https://www.google.com/url?sa=i&url=https%3A%2F%2Fguardiansofthegalaxy.square-enix-games.com%2Fde%2F&psig=AOvVaw1dJyoCJ7oGjhsP4XuufnQ8&ust=1645968039697000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCMiMpvW6nfYCFQAAAAAdAAAAABAD')
+file7 = URI.open('https://fyre.cdn.sewest.net/maple/608afaa6906368001312a76a/social_share-i7TZ7xcWN.png')
 game7 = Game.new(
   title: 'Guardians of the Galaxy',
   category: 'Action-Adventure',
@@ -119,7 +119,7 @@ game7 = Game.new(
   available: true,
   user: User.all.sample
 )
-game7.image.attach(io: file7, filename: 'GOTG.jpg', content_type: 'image/jpg')
+game7.image.attach(io: file7, filename: 'GOTG.png', content_type: 'image/png')
 game7.save!
 
 file8 = URI.open('https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/Halo_Infinite48.jpg')
