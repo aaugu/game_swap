@@ -1,4 +1,10 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:show, :index]
+
+  def show
+    @game = Game.find(params[:id])
+  end
+
   def index
     @games = Game.all
   end
