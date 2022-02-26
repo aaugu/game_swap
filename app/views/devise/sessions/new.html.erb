@@ -16,8 +16,9 @@
             <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
           </div>
 
-          <div class="form-actions">
-            <p><%= f.button :submit, "Log In", class: 'btn btn-flat '%> or <%= render "devise/shared/links" %></p>
+          <div class="form-actions d-flex justify-content-between">
+            <%= render "devise/shared/links" %>
+            <%= f.button :submit, "Log In", class: 'btn-flat '%>
           </div>
         <% end %>
       </div>

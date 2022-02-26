@@ -2,10 +2,10 @@
   <div id="ig-product-main-panel">
     <div class="wrapper">
       <div class="product">
-        <div class="blur">
-          <%= cl_image_path @game.image.key, crop: :fill %>
+        <div class="blur d-flex align-items-center">
+          <%= cl_image_tag @game.image.key, crop: :fill, class:'product-image' %>
         </div>
-        <div class="games_infos">
+        <div class="games_infos h-75">
           <div class="name">
             <h1>
               <%= @game.title %>
@@ -38,8 +38,12 @@
           <div class="game_description">
             <%= @game.description %>
           </div>
+
         </div>
       </div>
+    </div>
+    <div class="back text-center">
+      <%= link_to 'Back to the list', games_path, class:'btn-flat' %>
     </div>
   </div>
 </body>
