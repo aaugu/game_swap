@@ -2,10 +2,18 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  text-align: center;
 }
 
 .banner h1 {
-  margin: 0;
   color: rgb(219, 118, 24);
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
@@ -18,7 +26,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
-.btn {
+.btnhomepage {
 	box-shadow:inset 0px -3px 7px 0px #29bbff;
 	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
 	background-color:#2dabf9;
@@ -33,11 +41,11 @@
 	text-decoration:none;
 	text-shadow:0px 1px 0px #263666;
 }
-.btn:hover {
+.btnhomepage:hover {
 	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
 	background-color:#0688fa;
 }
-.btn:active {
+.btnhomepage:active {
 	position:relative;
 	top:1px;
 }
