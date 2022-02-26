@@ -29,11 +29,14 @@ div {
   overflow: hidden;
   width: 100%;
   border-radius: 8px;
+  flex-grow: 1;
+
 }
 
 .product{
   display: flex;
   border-radius: 8px;
+  height: 75vh;
 }
 
 .name {
@@ -159,4 +162,10 @@ body {
     --themed-very-light-blue: #cce5ff;
     --themed-blue: #2381d9;
     --themed-dark-blue: #004085;
+}
+
+.product-image {
+  width: 50vw;
+  max-height: 75vh;
+  object-fit: contain;
 }
