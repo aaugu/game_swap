@@ -20,7 +20,7 @@ class GamesController < ApplicationController
     @game.user = current_user
 
     if @game.save
-      redirect_to root_path
+      redirect_to games_path
     else
       render "new"
     end
