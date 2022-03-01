@@ -14,14 +14,14 @@ User.create!(
   email: "aaribaud@hotmail.com",
   password: "123456",
   username: "Anthony",
-  address: "Eaux-Vives, Geneva"
+  address: "Rue des Vollandes 38, 1207 Genève"
 )
 
 User.create!(
   email: "janusfury@mac.com",
   password: "123456",
   username: "James",
-  address: "Old Town, Lausanne"
+  address: "Rue du Lac 3, 1207 Genève"
 )
 
 file1 = URI.open('https://cdn.cloudflare.steamstatic.com/steam/apps/42700/header.jpg?t=1639695937')
