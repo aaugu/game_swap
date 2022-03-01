@@ -10,8 +10,8 @@ class GamesController < ApplicationController
   end
 
   def new
-    @categories = ["Action", "Action-Adventure", "Adventure", "Puzzle", "Role-playing", "Simulation", "Strategy", "Sport", "Sandbox"]
-    @console_collection = ["Atari", "Super Nintendo", "DreamCast", "Sega", "Game Boy", "Nintendo DS", "Switch", "PC", "XBox", "Xbox 360", "PSVita", "PSOne", "PS2", "PS3", "PS4", "PS5"]
+    @categories = ["Action", "Action-Adventure", "Adventure", "Puzzle", "Role-playing", "Simulation", "Strategy", "Sport", "Sandbox"].sort
+    @console_collection = ["Atari", "Super Nintendo", "DreamCast", "Sega", "Game Boy", "Nintendo DS", "Switch", "PC", "XBox", "Xbox 360", "PSVita", "PSOne", "PS2", "PS3", "PS4", "PS5"].sort
     @game = Game.new
   end
 
