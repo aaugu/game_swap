@@ -11,9 +11,11 @@ class BookingsController < ApplicationController
     @booking.game = @game
 
     if @booking.save
-      redirect_to dashboards_path
+      @game.available = false
+      @game.save
+      redirect_to dashboards_path, notice: "Good Game Well Played !"
     else
-      render "new"
+      render "new"#,  notice: "#{@game.title} not available right now"
     end
   end
 

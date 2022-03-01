@@ -7,8 +7,8 @@
         <%= simple_form_for @game do |f| %>
           <%= f.input :title, placeholder: 'Title' %>
           <%= f.input :description, placeholder: 'Description' %>
-          <%= f.input :category, placeholder: 'Category', collection: @categories %>
-          <%= f.input :platform, placeholder: 'Platform', collection: @console_collection %>
+          <%= f.input :category, placeholder: 'Category', collection: Game::CATEGORIES %>
+          <%= f.input :platform, placeholder: 'Platform', collection: Game::CONSOLE_COLLECTION %>
           <%= f.input :release_year, placeholder: 'Release year', collection: 1958..Time.now.year %>
           <%= f.input :price_per_day, placeholder: 'Price per day', min: 1 %>
           <%= f.input :image, as: :file %>
