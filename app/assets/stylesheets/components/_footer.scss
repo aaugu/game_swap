@@ -1,19 +1,12 @@
 .footer {
   background: #F8F9FA;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  position: relative;
-  height: 25vh;
-  left: 50%;
-  margin-left: -50vw;
-  padding: 0px 50px;
 }
 
 .footer-links {
   display: flex;
   align-items: center;
+  background-color: #F8F9FA;
+  height: 40px;
 }
 .footer-links a {
   color: rgb(0, 87, 145);
