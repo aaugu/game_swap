@@ -34,13 +34,13 @@
   </div>
 
   <div class="row mb-4">
-    <% if @bookings.empty? %>
+    <% if @games.empty? %>
       <div class="col-12 text-center" style="height:200px;">No games to rent yet</div>
     <% else %>
       <% @games.each do |game| %>
         <div class="col-4 mb-5">
           <div class="game shadow d-flex flex-column h-100 ml-3">
-            <%= cl_image_path game.image.key, crop: :fill, class: 'w-100 h-100' %>
+            <%= cl_image_tag game.image.key, crop: :fill, class: 'w-100' %>
             <div class="container d-flex justify-content-between mt-2">
               <p><%= game.title %></p>
               <p><%= game.platform %></p>
