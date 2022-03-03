@@ -22,7 +22,7 @@
           </div>
 
           <div class="game shadow d-flex flex-column h-100 ml-3">
-            <%= cl_image_tag @game.image.key, crop: :fill, class: 'w-100' %>
+            <%= cl_image_tag @game.image.key, crop: :fill, class: 'w-100 h-100' %>
             <div class="container d-flex justify-content-between mt-2">
               <p><%= @game.title %></p>
               <p><%= @game.platform %></p>

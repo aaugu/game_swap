@@ -36,7 +36,7 @@
                 <%= link_to "Rent", new_game_booking_path(@game) %>
               <% else %>
                 <%= link_to "Rent", games_path %>
-                <% flash[:alert] = "#{@game.title} not available right now" %>
+                <% flash[:alert] = "#{@game.title} is not available right now" %>
               <% end %>
             </div>
           </div>
