@@ -28,14 +28,14 @@
               <% if @game.available %>
                 <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png"> Available
               <% else %>
-                <img class="vu" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png">
+                <img class="vu" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png"> Unavailable
               <% end %>
             </div>
             <div class="btn">
-              <% if @game.user == current_user %>
-                <%= link_to "Rent", new_game_booking_path(@game), class: 'disabled' %>
+              <% if @game.user == current_user || !@game.available %>
+                <%= button_to "Rent", new_game_booking_path(@game), disabled: true %>
               <% else %>
-                <%= link_to "Rent", new_game_booking_path(@game) %>
+                <%= button_to "Rent", new_game_booking_path(@game), method: :get %>
               <% end %>
             </div>
           </div>
