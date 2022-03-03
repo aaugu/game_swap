@@ -1,24 +1,32 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light justify-content-between">
   <%= link_to "Game-Swap", root_path, class: "navbar-brand" %>
-  <ul class="nav navbar-nav navbar-right">
-    <% if (!user_signed_in?) %>
-      <li><%= link_to "Login", new_user_session_path %></li>
-      <li> | </li>
-      <li><%= link_to "Sign Up", new_user_registration_path %></li>
-    <% else %>
-      <li class="dropdown mr-5">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
-            role="button" aria-haspopup="true" aria-expanded="false">
-            <%= current_user.username %> <span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li class="small"><%= link_to "View All Our Games", games_path %></li>
-          <li class="small"><%= link_to "Create a New Game", new_game_path %></li>
-          <li role="separator" class="divider"></li>
-          <li class="small"><%= link_to "Edit Profile", edit_user_registration_path %></li>
-          <li class="small"><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
-        </ul>
-      </li>
-    <% end %>
-  </ul>
+
+  <div class="features d-flex justify-content-between">
+    <div class="list">
+      <%= link_to "All video games", games_path, class: 'mr-5' %>
+    </div>
+
+    <div class="connexion">
+      <ul class="nav navbar-nav navbar-right">
+        <% if (!user_signed_in?) %>
+          <div class="d-flex justify-content-between mr-4">
+            <%= link_to "Login", new_user_session_path, class: 'mr-1' %>
+            <%= link_to "| Sign Up", new_user_registration_path %>
+          </div>
+        <% else %>
+          <li class=" nav-item dropdown mr-5">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= current_user.username %> <span class="caret"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+              <%= link_to "Dashboard", dashboards_path, class:'dropdown-item' %><br>
+              <%= link_to "Create a New Game", new_game_path, class:'dropdown-item' %><br>
+              <%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %><br>
+              <%= link_to "Log Out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
 </nav>
