@@ -8,9 +8,9 @@
           <%= f.input :title, placeholder: 'Title' %>
           <%= f.input :description, placeholder: 'Description' %>
           <div class="form-col-2 d-flex justify-content-between">
-          <%= f.input :platform, placeholder: 'Platform', collection: @console_collection %>
-          <%= f.input :category, placeholder: 'Category', collection: @categories %>
-          <%= f.input :release_year, placeholder: 'Release year', collection: (1958..Time.now.year).sort.reverse %>
+            <%= f.input :platform, placeholder: 'Platform', collection: @console_collection %>
+            <%= f.input :category, placeholder: 'Category', collection: @categories %>
+            <%= f.input :release_year, placeholder: 'Release year', collection: (1958..Time.now.year).sort.reverse %>
           </div>
           <%= f.input :price_per_day, placeholder: 'Price per day', min: 1 %>
           <%= f.input :image, as: :file %>
