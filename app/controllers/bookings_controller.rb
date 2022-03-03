@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   def new
-    @game = Game.find(params[:game_id])
     @booking = Booking.new
+    @game = Game.find(params[:game_id])
   end
 
   def create
@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
       @game.save
       redirect_to dashboards_path, notice: "Good Game Well Played !"
     else
-      render "new"#,  notice: "#{@game.title} not available right now"
+      render "new"
     end
   end
 

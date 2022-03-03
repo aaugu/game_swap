@@ -2,10 +2,12 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :game
 
-  validates :start_date, :end_date, presence: true
+  validates :user_id, :game_id, :start_date, :end_date, presence: true
   validate :booking_dates_valid?
+  # validate :user_valid?
 
   private
+
 
   def booking_dates_valid?
     if start_date < Date.today
@@ -18,4 +20,8 @@ class Booking < ApplicationRecord
       return true
     end
   end
+
+  # def user_valid?
+  #   :user != current_user
+  # end
 end
