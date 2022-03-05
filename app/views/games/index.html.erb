@@ -10,28 +10,39 @@
 
         <div class="col-md-8 col-sm-12 right_box">
 
-            <div class="row heading mt-4 ml-2">
+            <div class="row heading mt-4 ml-2 d-flex justify-content-between align-items-center">
               <h1>All our Video Games</h1>
-            </div><!-- row -->
-            <div class="row heaading mb-2 ml-2">
-            <p><%= Game.count %> games found</p>
+              <div class="d-flex">
+                <div>
+                  <%= form_tag games_path, method: :get do %>
+                    <%= text_field_tag :query,
+                      params[:query],
+                      class: "form-control",
+                      placeholder: "Find a game"
+                    %>
+                </div>
+                <div class ="ml-auto">
+                  <%= submit_tag "Search", class: "btn btn-primary" %>
+                </div>
+                <% end %>
+              </div>
+
             </div>
+
           <div class="container vertical-scrollable">
             <div class="row" >
               <% @games.each do |game| %>
                 <div class="col-4">
                   <div class="game-card">
                     <div class="game-card-image" style="background-image: url('<%= cl_image_path game.image.key, crop: :fill %>')"></div>
-                    <div class="game-card-content">
-                      <div class="game-card-title">
-                        <h5><%= game.title %></h4>
-                      </div>
-                      <p><%= game.user.address %></p>
-                      <div class="flex">
-                        <div class="flex-align">
-                          <i class="mr-2"></i><span><%= game.platform %></span>
+                    <div class="game-card-content d-flex flex-column  justify-content-between ">
+                      <h5 class="p-2"><%= game.title %></h4>
+                      <p class="p-2"><%= game.user.address %></p>
+                      <div class="d-flex justify-content-between pr-2 pl-2">
+                        <div>
+                          <span><%= game.platform %></span>
                         </div>
-                        <div class="flex-align ml-3">
+                        <div>
                           <b class="mr-2">CHF</b> <%= game.price_per_day %>
                         </div>
                       </div>

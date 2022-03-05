@@ -6,12 +6,26 @@ class GamesController < ApplicationController
   end
 
   def index
-    @games = Game.all
-    @users = User.all
+    if params[:query].present?
+      sql_query = " \
+        games.title ILIKE :query \
+        OR games.category ILIKE :query \
+        OR games.platform ILIKE :query \
+        OR users.address ILIKE :query \
+      "
+      @games = Game.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+      @games.each do |game|
+        @users = User.where("users.id = #{game.user_id}")
+      end
+    else
+      @games = Game.all
+      @users = User.all
+    end
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { user: user })
       }
     end
   end
