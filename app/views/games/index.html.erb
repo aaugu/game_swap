@@ -4,7 +4,7 @@
         <div class="col-lg-4 hidden-sm-down" id="map_container">
             <div id="map"
               class="position-sticky"
-              style="width: 100%; height: 92.5%; margin-top: 20px;"
+              style="width: 100%; height: 95%; margin-top: 7px;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
@@ -13,18 +13,18 @@
 
             <div class="row heading mt-4 ml-2 d-flex justify-content-between align-items-center">
               <h1>All Our Video Games</h1>
-              <div class="d-flex">
-                <div class="mr-1">
-                  <%= form_tag games_path, method: :get do %>
+              <div>
+                <%= form_tag games_path, method: :get, class:"d-flex" do %>
+                  <div class="mr-1">
                     <%= text_field_tag :query,
                       params[:query],
                       class: "form-control",
                       placeholder: "Find a game"
                     %>
-                </div>
-                <div class ="ml-auto">
-                  <%= submit_tag "Search", class: "btn btn-sm btn-gs font-weight-light" %>
-                </div>
+                  </div>
+                  <div class ="ml-auto">
+                    <%= submit_tag "Search", class: "btn btn-sm btn-gs font-weight-light" %>
+                  </div>
                 <% end %>
               </div>
 
