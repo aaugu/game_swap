@@ -1,0 +1,62 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center mb-4">My bookings</h1>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <% if @bookings.empty? %>
+      <div class="col-12 text-center" style="height:200px;">No bookings yet</div>
+    <% else %>
+      <% @bookings.each do |booking| %>
+        <div class="col-4 mb-5">
+          <div class="game shadow d-flex flex-column h-100 ml-3">
+            <%= cl_image_tag booking.game.image.key, crop: :fill, class: 'w-100' %>
+            <div class="container d-flex justify-content-between mt-2">
+              <p><%= booking.game.title %></p>
+              <p><%= booking.game.platform %></p>
+            </div>
+            <div class="container d-flex justify-content-between">
+              <p><strong>From </strong><%= booking.start_date.strftime("%a %d %b") %><strong> to </strong><%= booking.end_date.strftime("%a %d %b") %></p>
+              <p><%= (booking.end_date - booking.start_date).to_i * booking.game.price_per_day %> CHF</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center mb-4">My games</h1>
+    </div>
+  </div>
+
+  <div class="row mb-4">
+    <% if @games.empty? %>
+      <div class="col-12 text-center" style="height:200px;">No games to rent yet</div>
+    <% else %>
+      <% @games.each do |game| %>
+        <div class="col-4 mb-5">
+          <div class="game shadow d-flex flex-column h-100 ml-3">
+            <%= cl_image_tag game.image.key, crop: :fill, class: 'w-100' %>
+            <div class="container d-flex justify-content-between mt-2">
+              <p><%= game.title %></p>
+              <p><%= game.platform %></p>
+            </div>
+            <div class="container d-flex justify-content-between">
+              <% if game.available %>
+                <img class="vu h-50" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png">
+              <% else %>
+                <img class="vu h-50" src="https://cdn.pixabay.com/photo/2012/04/12/20/12/x-30465_1280.png">
+              <% end %>
+              <p><%= game.price_per_day %> CHF / day</p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

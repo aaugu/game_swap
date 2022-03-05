@@ -2,14 +2,16 @@
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-3 shadow">
-        <h3>Create a new game</h3>
+      <div class="bg-white rounded p-5 shadow">
+        <h3 class="text-center">Create a new game</h3>
         <%= simple_form_for @game do |f| %>
           <%= f.input :title, placeholder: 'Title' %>
           <%= f.input :description, placeholder: 'Description' %>
-          <%= f.input :category, placeholder: 'Category', collection: @categories %>
-          <%= f.input :platform, placeholder: 'Platform', collection: @console_collection %>
-          <%= f.input :release_year, placeholder: 'Release year', collection: 1958..Time.now.year %>
+          <div class="form-col-2 d-flex justify-content-between">
+            <%= f.input :platform, placeholder: 'Platform', collection: @console_collection %>
+            <%= f.input :category, placeholder: 'Category', collection: @categories %>
+            <%= f.input :release_year, placeholder: 'Release year', collection: (1958..Time.now.year).sort.reverse %>
+          </div>
           <%= f.input :price_per_day, placeholder: 'Price per day', min: 1 %>
           <%= f.input :image, as: :file %>
           <%= f.submit class: 'btn btn-flat' %>
