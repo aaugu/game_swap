@@ -18,7 +18,7 @@ class GamesController < ApplicationController
         @users = User.where("users.id = #{game.user_id}")
       end
     else
-      @games = Game.all
+      @games = Game.all.sort_by(&:created_at).reverse
       @users = User.all
     end
     @markers = @users.geocoded.map do |user|
