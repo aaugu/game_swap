@@ -1,19 +1,20 @@
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid m-2">
+    <div class="row full-height">
 
-        <div class="col-md-4 hidden-sm-down position-sticky" id="map_container">
+        <div class="col-md-4 hidden-sm-down" id="map_container">
             <div id="map"
-              style="width: 100%; height: 500px; margin-top: 20px;"
+              class="position-sticky"
+              style="width: 100%; height: 450px; margin-top: 20px;"
               data-markers="<%= @markers.to_json %>"
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
 
-        <div class="col-md-8 col-sm-12 right_box">
+        <div class="col-md-7 right_box">
 
             <div class="row heading mt-4 ml-2 d-flex justify-content-between align-items-center">
               <h1>All Our Video Games</h1>
               <div class="d-flex">
-                <div class="mr-2">
+                <div class="mr-1">
                   <%= form_tag games_path, method: :get do %>
                     <%= text_field_tag :query,
                       params[:query],
@@ -21,8 +22,8 @@
                       placeholder: "Find a game"
                     %>
                 </div>
-                <div class ="ml-auto mr-2">
-                  <%= submit_tag "Search", class: "btn btn-primary" %>
+                <div class ="ml-auto">
+                  <%= submit_tag "Search", class: "btn btn-sm btn-gs font-weight-light" %>
                 </div>
                 <% end %>
               </div>
@@ -35,10 +36,10 @@
                 <div class="col-4">
                   <div class="game-card">
                     <div class="game-card-image" style="background-image: url('<%= cl_image_path game.image.key, crop: :fill %>')"></div>
-                    <div class="game-card-content d-flex flex-column  justify-content-between ">
-                      <h5 class="p-2"><%= game.title %></h4>
-                      <p class="p-2"><%= game.user.address %></p>
-                      <div class="d-flex justify-content-between pr-2 pl-2">
+                    <div class="game-card-content d-flex flex-column  justify-content-between p-2">
+                      <h5><%= game.title %></h4>
+                      <p><%= game.user.address %></p>
+                      <div class="d-flex justify-content-between">
                         <div>
                           <span><%= game.platform %></span>
                         </div>
