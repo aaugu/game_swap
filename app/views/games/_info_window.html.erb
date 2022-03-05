@@ -1,4 +1,6 @@
-<h6>Games available:</h6>
-<% user.games.each do |game|  %>
-  <p> <%= game.title %> </p>
-<% end %>
+<div class="info-box">
+  <h6 class="font-weight-bold">Games available:</h6>
+  <% user.games.each do |game|  %>
+    <p class="info-box-content"> <%= game.title %> </p>
+  <% end %>
+</div>

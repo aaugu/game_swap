@@ -1,7 +1,7 @@
 <body>
   <div id="ig-product-main-panel">
     <div class="wrapper">
-    <div class="correction"></div>
+      <div class="correction"></div>
       <div class="product">
         <div class="blur d-flex align-items-center">
           <%= cl_image_tag @game.image.key, crop: :fill, class:'product-image' %>
@@ -36,15 +36,13 @@
             </div>
             <div class="rent">
               <div class="rent_price">
-                Price: <%= @game.price_per_day %> € per day
+                Price: <%= @game.price_per_day %> CHF per day
               </div>
-              <div>
                 <% if @game.user == current_user || !@game.available %>
                   <%= link_to "Rent", new_game_booking_path(@game), class: "rent_btn rent-btn-disabled" %>
                 <% else %>
                   <%= link_to "Rent", new_game_booking_path(@game), method: :get, class: "rent_btn" %>
                 <% end %>
-              </div>
             </div>
           </div>
         </div>
