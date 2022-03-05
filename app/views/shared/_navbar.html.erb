@@ -22,10 +22,10 @@
               <%= current_user.username %> <span class="caret"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
-              <%= link_to "Dashboard", dashboards_path, class:'dropdown-item' %><br>
-              <%= link_to "Create a New Game", new_game_path, class:'dropdown-item' %><br>
-              <%= link_to "Edit Profile", edit_user_registration_path, class:'dropdown-item' %><br>
-              <%= link_to "Log Out", destroy_user_session_path, class:'dropdown-item', method: :delete %>
+              <%= link_to "Dashboard", dashboards_path %><br>
+              <%= link_to "Create a New Game", new_game_path%><br>
+              <%= link_to "Edit Profile", edit_user_registration_path %><br>
+              <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
             </div>
           </li>
         <% end %>

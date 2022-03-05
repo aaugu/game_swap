@@ -1,7 +1,7 @@
 <div class="container py-4">
   <div class="row">
-    <div class="col-12 col-md-6 offset-lg-3">
-      <div class="bg-white rounded p-5 shadow">
+    <div class="col-12 col-md-6 offset-lg-3 mb-5">
+      <div class="bg-white rounded p-4 shadow ">
         <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
 
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -29,7 +29,7 @@
 
           <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class:'btn-cancel' %></p><br>
           <div class='d-flex justify-content-between'>
-            <%= link_to "Back", :back, class:'btn-flat text-center' %>
+            <%= link_to "Back", :back, class:'btn btn-flat text-center' %>
             <div class="form-actions">
               <%= f.button :submit, "Update", class: 'btn-flat' %>
             </div>
