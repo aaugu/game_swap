@@ -14,7 +14,6 @@ div {
   border-radius: 0 0 8px 8px;
   position: relative;
   z-index: 1;
-  /* max-width: 1036px; */
   margin: 0 auto;
 }
 
@@ -36,16 +35,10 @@ div {
 .product{
   display: flex;
   border-radius: 8px;
-  height: 75vh;
 }
 
 .name {
   color: black
-}
-
-.img {
-  width: 100%;
-  border-radius: 8px;
 }
 
 .subinfos {
@@ -68,7 +61,7 @@ div {
   display: inline-block;
   border-right: 1px solid rgba(62,62,62,.23);
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   margin: 5px 0;
 }
 
@@ -78,7 +71,7 @@ div {
   border-right: 1px solid rgba(62,62,62,.23);
   vertical-align: top;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   color: #000;
 }
 
@@ -88,7 +81,7 @@ div {
   border-right: 1px solid rgba(62,62,62,.23);
   vertical-align: top;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   color: #000;
 }
 
@@ -98,17 +91,16 @@ div {
   border-right: 1px solid rgba(62,62,62,.23);
   vertical-align: top;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   color: #000;
 }
 
 .disponibility {
   display: inline-block;
   padding: 8px 17px 7px 15px;
-  border-right: 1px solid rgba(62,62,62,.23);
   vertical-align: top;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 15px;
   color: #000;
 }
 
@@ -123,7 +115,7 @@ div {
     padding: 8px 17px 7px 15px;
     vertical-align: top;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 15px;
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
@@ -165,7 +157,97 @@ body {
 }
 
 .product-image {
-  width: 50vw;
-  max-height: 75vh;
+  width: 100%;
+  max-height: 50vh;
   object-fit: contain;
+  padding-left: 15px;
+}
+
+.rent {
+  border-radius: 6px;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 10px 0;
+  background: rgba(0,0,0,.04);
+  flex-wrap: wrap;
+  padding: 5px;
+}
+
+.rent_price {
+  position: relative;
+  color: #000;
+  padding: 8px 17px 7px 15px;
+  display: inline-block;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 5px 0;
+}
+
+/*.rent_btn {
+    display: inline-block;
+    padding: 8px 17px 7px 15px;
+    vertical-align: top;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}*/
+
+.correction {
+  padding: 25px;
+}
+
+.card {
+  padding-left: 15px;
+  padding-right: 15px;
+  border: none;
+  width: 115vh;
+}
+
+$color: #0cf;
+
+.rent_btn {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken($color, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  &:hover {
+    color: #fff;
+    &:before {
+      width: 100%;
+    }
+  }
 }
