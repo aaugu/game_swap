@@ -251,3 +251,11 @@ $color: #0cf;
     }
   }
 }
+
+.rent-btn-disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  &:after {
+    background-color: gray;
+  }
+}
