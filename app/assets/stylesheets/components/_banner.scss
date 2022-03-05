@@ -1,15 +1,13 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  height: 75vh;
+  height: 86vh;
+  max-height: 86vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  max-width: 100vw;
   position: relative;
-  left: 50%;
-  margin-left: -50vw;
   text-align: center;
 }
 
