@@ -1,7 +1,7 @@
 <div class="container-fluid m-2">
-    <div class="row full-height">
+    <div class="row d-flex justify-content-center full-height">
 
-        <div class="col-md-4 hidden-sm-down" id="map_container">
+        <div class="col-lg-4 hidden-sm-down" id="map_container">
             <div id="map"
               class="position-sticky"
               style="width: 100%; height: 450px; margin-top: 20px;"
@@ -9,7 +9,7 @@
               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
         </div>
 
-        <div class="col-md-7 right_box">
+        <div class="col-lg-7 right_box">
 
             <div class="row heading mt-4 ml-2 d-flex justify-content-between align-items-center">
               <h1>All Our Video Games</h1>
@@ -49,7 +49,7 @@
                       </div>
                     </div>
                     <div class="game-card-actions d-flex justify-content-between">
-                      <%= link_to 'More info', game_path(game) %>
+                      <span class="link"><%= link_to 'More info', game_path(game) %></span>
                       <div class="flex-align">
                         <% if game.available %>
                           <img class="vu" src="https://s3.gaming-cdn.com/themes/igv1/modules/product/images/ticked2.png"> Available
