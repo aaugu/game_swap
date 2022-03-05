@@ -38,7 +38,7 @@
               <div class="rent_price">
                 Price: <%= @game.price_per_day %> € per day
               </div>
-              <div class="rent_btn">
+              <div>
                 <% if @game.user == current_user || !@game.available %>
                   <%= link_to "Rent", new_game_booking_path(@game), class: "rent_btn rent-btn-disabled" %>
                 <% else %>
@@ -49,9 +49,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="back text-center">
-      <%= link_to 'Back to the list', games_path, class:'btn-flat' %>
     </div>
   </div>
 </body>
